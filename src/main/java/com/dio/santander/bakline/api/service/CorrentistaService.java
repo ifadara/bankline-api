@@ -22,7 +22,7 @@ public class CorrentistaService {
 		correntista.setNome(correntistaDto.getNome());
 		
 		Conta conta = new Conta();
-		conta.setSaldo(null);
+		conta.setSaldo(0.0);
 		conta.setNumero(new Date().getTime());
 		
 		correntista.setConta(conta);
