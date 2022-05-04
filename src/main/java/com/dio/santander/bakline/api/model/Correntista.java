@@ -17,7 +17,7 @@ public class Correntista {
 	private Integer id;
 	
 	@Column(length = 20)
-	private Integer cpf;
+	private String cpf;
 	
 	@Column(length = 60)
 	private String nome;
@@ -28,7 +28,7 @@ public class Correntista {
 	public Correntista() {
 	}
 	
-	public Correntista(Integer id, Integer cpf, String nome, Conta conta) {
+	public Correntista(Integer id, String cpf, String nome, Conta conta) {
 		this.id = id;
 		this.cpf = cpf;
 		this.nome = nome;
@@ -46,10 +46,10 @@ public class Correntista {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getNome() {
