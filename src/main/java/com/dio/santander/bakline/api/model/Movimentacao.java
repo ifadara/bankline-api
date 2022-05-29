@@ -1,6 +1,7 @@
 package com.dio.santander.bakline.api.model;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ public class Movimentacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private LocalDateTime dataHora;
+	private ZonedDateTime dataHora;
 	private String descricao;
 	private Double valor;
 	
@@ -32,7 +33,7 @@ public class Movimentacao {
 	public Movimentacao() {
 	}
 	
-	public Movimentacao(Integer id, LocalDateTime dataHora, String descricao, Double valor, MovimentacaoTipo tipo) {
+	public Movimentacao(Integer id, ZonedDateTime dataHora, String descricao, Double valor, MovimentacaoTipo tipo) {
 		this.id = id;
 		this.dataHora = dataHora;
 		this.descricao = descricao;
@@ -48,11 +49,11 @@ public class Movimentacao {
 		this.id = id;
 	}
 
-	public LocalDateTime getDataHora() {
+	public ZonedDateTime getDataHora() {
 		return dataHora;
 	}
 
-	public void setDataHora(LocalDateTime dataHora) {
+	public void setDataHora(ZonedDateTime dataHora) {
 		this.dataHora = dataHora;
 	}
 

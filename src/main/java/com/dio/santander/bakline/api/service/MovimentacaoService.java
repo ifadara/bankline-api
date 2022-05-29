@@ -1,6 +1,7 @@
 package com.dio.santander.bakline.api.service;
 
-import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,7 @@ public class MovimentacaoService {
 		
 		Double valor = movimentacaoDto.getTipo()==MovimentacaoTipo.RECEITA ? movimentacaoDto.getValor() : movimentacaoDto.getValor() * -1;
 				
-		movimentacao.setDataHora(LocalDateTime.now());
+		movimentacao.setDataHora(ZonedDateTime.now(ZoneOffset.UTC.normalized()));
 		movimentacao.setDescricao(movimentacaoDto.getDescricao());
 		movimentacao.setIdConta(movimentacaoDto.getIdConta());
 		movimentacao.setTipo(movimentacaoDto.getTipo());
